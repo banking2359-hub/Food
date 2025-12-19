@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>food_delivery</title>
+    <link rel="stylesheet" href="./food_delivery.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav>
+        <div class="nav_bar">
+            <div class="left">
+                <a href="./food_delivery.html">
+                    <img src="./motorcycle.png" style="width: 37px" />
+                    <span> Delivery Bdu</span>
+                </a>
+            </div>
+            <div class="hum" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="right">
+                <div class="text">
+                    <div onclick="restaurant()">
+                        <img src="./restaurant.png" style="width: 18px" />Restaurant
+                        <img src="./drop.png" />
+                    </div>
+                    <div onclick="window.location.href='./About.html';">About</div>
+                </div>
+                <div class="log_in" onclick="form()">sign-up</div>
+            </div>
+        </div>
+        <div class="restaurant_container">
+            <div class="restauran_option">
+                <div class="Local_Eat">
+                    <h4>Local Eat</h4>
+                    <a href="">Ye-Gondar Traditional Rest</a>
+                    <a href="">Abesha Delicacies</a>
+                    <a href="">Enat Kitchen</a>
+                </div>
+                <div class="Pizza_Burger">
+                    <h4>Pizza Burger</h4>
+                    <a href="">King Burger Palace</a>
+                    <a href="">Campus Pizza Hub</a>
+                    <a href="">Fries & Shakes Spot</a>
+                </div>
+                <div class="Asian">
+                    <h4>Asian</h4>
+                    <a href="">Oriental Wok</a>
+                    <a href="">Bamboo Garden</a>
+                    <a href="">Indian Spice House</a>
+                </div>
+                <div class="Healthy">
+                    <h4>healthy vegetarian</h4>
+                    <a href="">The Smoothie Bar</a>
+                    <a href="">Green Life Cafe</a>
+                    <a href="">Fresh Start Bowls</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="hero_section">
+        <div class="text_over_img">
+            <div>Welcome to Student Food Delivery Service</div>
+            <div class="order">
+                You can order your favorite food and it will be delivered to your
+                doorm.
+            </div>
+            <div class="restaurant">
+                <div>Abela</div>
+                <div>Ban</div>
+                <div>Ethiopia</div>
+                <div>Guha</div>
+            </div>
+            <div class="food_scroll_container" id="foodScrollContainer">
+                <div class="food_scroll">
+
+                    <div class="food_items">
+                        <div class="food_card">
+                            <img src="./shiro.jpeg" alt="Burger">
+                            <div class="card_info">
+                                <h4>Shiro</h4>
+                                <p>50 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./pasta.jpeg" alt="Pizza">
+                            <div class="card_info">
+                                <h4>Pasta</h4>
+                                <p>70 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./mekoreni.jpeg" alt="Pasta">
+                            <div class="card_info">
+                                <h4>Mekoreni</h4>
+                                <p>70 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./baynet.jpeg" alt="Salad">
+                            <div class="card_info">
+                                <h4>Baynet</h4>
+                                <p>80 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./awaze_tibs.jpeg" alt="Sushi">
+                            <div class="card_info">
+                                <h4>Awaze Tibs</h4>
+                                <p>100 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./injera_firfer.webp" alt="Tacos">
+                            <div class="card_info">
+                                <h4>Injera Firfer</h4>
+                                <p>60 Birr</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="food_items">
+                        <div class="food_card">
+                            <img src="./Quanta_firfir.webp" alt="Burger">
+                            <div class="card_info">
+                                <h4>Quanta Firfir</h4>
+                                <p>150 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./dero.jpeg">
+                            <div class="card_info">
+                                <h4>Dero Wet</h4>
+                                <p>200 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./mekoreni.jpeg">
+                            <div class="card_info">
+                                <h4>mekoreni</h4>
+                                <p>55 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./baynet.jpeg">
+                            <div class="card_info">
+                                <h4>Baynet</h4>
+                                <p>80 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./pizza.jpeg">
+                            <div class="card_info">
+                                <h4>Pizza</h4>
+                                <p>100 Birr</p>
+                            </div>
+                        </div>
+                        <div class="food_card">
+                            <img src="./berger.jpeg">
+                            <div class="card_info">
+                                <h4>berger</h4>
+                                <p>60 Birr</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popular">
+        <h2>Most Popular Dishes</h2>
+        <div class="popular_food_grid">
+
+            <div class="food_card">
+                <img src="./shiro.jpeg" alt="Supreme Pizza">
+                <div class="card_info">
+                    <h4>Shiro</h4>
+                    <p>60 Birr</p>
+                </div>
+            </div>
+
+            <div class="food_card">
+                <img src="./pasta.jpeg" alt="Fasting Food">
+                <div class="card_info">
+                    <h4>Pasta</h4>
+                    <p>70 Birr</p>
+                </div>
+            </div>
+
+            <div class="food_card">
+                <img src="./injera_firfer.webp" alt="Beef Tibs">
+                <div class="card_info">
+                    <h4>injera_firfer</h4>
+                    <p>60 Birr</p>
+                </div>
+            </div>
+
+            <div class="food_card">
+                <img src="./mekoreni.jpeg" alt="Kitfo">
+                <div class="card_info">
+                    <h4>Mekoreni</h4>
+                    <p>80 Birr</p>
+                </div>
+            </div>
+
+            <div class="food_card hid">
+                <img src="./baynet.jpeg" alt="Supreme Pizza">
+                <div class="card_info">
+                    <h4>Baynet</h4>
+                    <p>100 Birr</p>
+                </div>
+            </div>
+
+            <div class="food_card hid">
+                <img src="https://via.placeholder.com/150/4d4dff/ffffff?text=Fasting" alt="Fasting Food">
+                <div class="card_info">
+                    <h4>Fasting</h4>
+                    <p>100 Birr</p>
+                </div>
+            </div>
+            <div class="food_card hid">
+                <img src="https://via.placeholder.com/150/ff4d4d/ffffff?text=Pizza" alt="Supreme Pizza">
+                <div class="card_info">
+                    <h4>Pizza</h4>
+                    <p>100 Birr</p>
+                </div>
+            </div>
+
+            <div class="food_card hid">
+                <img src="https://via.placeholder.com/150/4d4dff/ffffff?text=Fasting" alt="Fasting Food">
+                <div class="card_info">
+                    <h4>Fasting </h4>
+                    <p>100 Birr</p>
+                </div>
+            </div>
+        </div>
+        <img src="./more_down.svg" class="more_button" id="moreButtonImage" onclick="more()">
+    </div>
+
+    <div class="direction">
+        <form action="#" class="form">
+            <div class="move1">
+                <div class="close" onclick="closed()">X</div>
+                <h2>Login</h2>
+                <div class="input_group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email</label>
+                    <img src="" class="icon">
+                    <hr>
+                </div>
+
+                <div class="input_group">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                    <img src="./png.png" class="icon">
+                    <hr>
+                </div>
+
+                <div class="option">
+                    <div class="remembers">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="log_in">Login</button>
+
+                <p class="register">
+                    Don't have an account?
+                    <a href="#" class="register_link" onclick="registered()">Register</a>
+                </p>
+            </div>
+            <div class="move2">
+                <div class="close" onclick="closed()">X</div>
+                <h2>Registration</h2>
+                <div class="input_group">
+                    <input type="text" id="regUsername" required>
+                    <label for="regUsername">Username</label>
+                    <img src="./png.png" class="icon">
+                    <hr>
+                </div>
+
+                <div class="input_group">
+                    <input type="email" id="regEmail" required>
+                    <label for="regEmail">Email</label>
+                    <span class="icon">✉️</span>
+                    <hr>
+                </div>
+
+                <div class="input_group">
+                    <input type="password" id="regPassword" required>
+                    <label for="regPassword">Password</label>
+                    <span class="icon">🔒</span>
+                    <hr>
+                </div>
+
+                <div class="terms">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the terms & conditions</label>
+                </div>
+
+                <button type="submit" class="log_in">Register</button>
+
+                <p class="register">
+                    Already have an account?
+                    <a href="#" class="register_link" onclick="login()">Login</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    </div>
+    <footer class="main_footer">
+        <div class="footer_container">
+
+            <div class="footer_logo">
+                <a href="./food_delivery.html">
+                    <img src="./motorcycle.png" style="width: 37px" alt="Delivery Bdu Logo" />
+                    <span>Delivery Bdu</span>
+                </a>
+                <p>Your fastest student food delivery service.</p>
+                <p class="copyright">&copy; 2025 Delivery Bdu. All rights reserved.</p>
+            </div>
+
+            <div class="footer_links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="./food_delivery.html">Home</a></li>
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="#">Popular Food</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help & FAQs</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="footer_social">
+                <h4>Follow Us</h4>
+                <div class="social_icons">
+                    <a href="https://youtube.com/@BinaTech-21"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/ban-tech"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://t.me/BINA2359"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+                <div class="contact_info">
+                    <h4>Contact Us</h4>
+                    <p>Email: Ban_Space@gmail.com</p>
+                    <p>Phone: +251 927789173</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <div>
+                Ban-Tech &copy; 2025 All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./food_delivery.js"></script>
+</body>
+
+</html>

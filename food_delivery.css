@@ -1,0 +1,841 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    width: 100%;
+    min-height: 60px;
+
+}
+
+.nav_bar {
+    position: absolute;
+    width: 100%;
+    min-height: 60px;
+    background-color: #be2e30;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+.left a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: #be2e30;
+    border: 2px white solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.right .text {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.text div {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.text div::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    border-radius: 3px;
+    bottom: 0px;
+    transition: transform .3s;
+    transform-origin: center;
+    transform: scale(0);
+}
+
+.text div:hover::after {
+    transform-origin: center;
+    transform: scale(1);
+}
+
+.right .log_in {
+    border: 2px solid white;
+    padding: 10px 15px;
+    border-radius: 17px;
+    cursor: pointer;
+    transition: all .5s;
+    transform-origin: right;
+}
+
+.right .log_in:hover {
+    transform-origin: center;
+    background-color: white;
+    transform: scaleX(1.01);
+    color: red;
+}
+
+.hero_section {
+    width: 100%;
+    position: relative;
+    min-height: 500px;
+    background-image: url(./ethio_food.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(41, 41, 41, 0.7);
+    background-blend-mode: darken;
+}
+
+.text_over_img {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    text-align: center;
+    color: white;
+    position: relative;
+    width: 100%;
+    line-height: 1;
+}
+
+.text_over_img>div:first-child {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.text_over_img .order {
+    font-size: 30px;
+    margin-bottom: 3rem;
+}
+
+.restaurant {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.restaurant div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px white;
+    width: 15rem;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.restaurant div:hover {
+    background-color: white;
+    color: #be2e30;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.hum {
+    display: none;
+    flex-direction: column;
+    width: 30px;
+    height: 20px;
+    gap: 3px;
+    position: relative;
+}
+
+.hum span {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 80px;
+}
+
+/* .direction {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 10%;
+    align-items: center;
+    z-index: 1000;
+    transform: scale(0);
+    transform-origin: top;
+    transition: transform 0.3s;
+} */
+
+.direction {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transform: scale(0);
+    transform-origin: top;
+    transition: transform 0.3s;
+}
+
+.direction.active {
+    transform-origin: top;
+    transform: scale(1);
+}
+
+.form {
+    font-weight: bold;
+    width: 340px;
+    padding: 30px;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+
+}
+
+h2 {
+    color: black;
+    font-family: sans-serif;
+    margin-bottom: 10%;
+}
+
+.input_group {
+    position: relative;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.input_group input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: black;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+.close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px 15px;
+    font-size: 2em;
+    cursor: pointer;
+    color: #000;
+    background-color: gray;
+    border-bottom-left-radius: 20px;
+}
+
+.input_group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1em;
+    color: #000;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+}
+
+.input_group input:focus~label,
+.input_group input:valid~label {
+    top: -20px;
+    left: 0;
+    font-size: 0.8em;
+    color: #000;
+}
+
+.input_group hr {
+    margin-top: 5px;
+}
+
+.input_group .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.1em;
+    color: #000;
+    opacity: 0.8;
+}
+
+.option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    margin: 15px 0 25px 0;
+    color: #000;
+
+}
+
+.remembers {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.forgot {
+    color: #000;
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.form .log_in {
+    width: 100%;
+    padding: 12px;
+    background-color: #0f1c2d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form .log_in:hover {
+    background-color: #1a2a43;
+}
+
+.register {
+    margin-top: 25px;
+    color: #000;
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+.register_link {
+    color: #0f1c2d;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9em;
+    margin: 25px 0 35px 0;
+    text-align: left;
+    color: #000;
+}
+
+.move1.active {
+    display: none;
+}
+
+.move2 {
+    display: none;
+}
+
+.move2.active {
+    display: block;
+}
+
+.food_scroll_container {
+    overflow-x: auto;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 30px;
+    scrollbar-width: none;
+}
+
+.food_scroll {
+    display: flex;
+    animation: scroll-left 40s linear infinite;
+}
+
+
+.food_scroll_container:hover .food_scroll {
+    animation-play-state: paused;
+}
+
+.food_items {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    width: max-content;
+}
+
+.food_card {
+    min-width: 200px;
+    height: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.food_card:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.food_card img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.card_info {
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+}
+
+.card_info h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.card_info p {
+    font-weight: bold;
+    color: #ffcccb;
+}
+
+.popular {
+    width: 100%;
+    position: relative;
+    min-height: 500px;
+}
+
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+
+        transform: translateX(-50%);
+    }
+}
+
+.restaurant_container {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    color: #be2e30;
+    min-height: 60px;
+    background-color: rgb(244, 244, 244);
+    opacity: 95%;
+    z-index: -1;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform .3s;
+}
+
+.restaurant_container.active {
+    transform: scaleY(1);
+}
+
+.restauran_option {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 23%;
+    margin-right: 5%;
+}
+
+.restauran_option div {
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.restauran_option a {
+    padding-left: 5px;
+    text-decoration: none;
+    color: black;
+    line-height: 2;
+
+}
+
+.restauran_option h4 {
+    width: fit-content;
+    position: relative;
+    cursor: pointer;
+}
+
+.restauran_option h4::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 1px;
+    border-radius: 3px;
+    bottom: -1px;
+    left: 0px;
+    transition: transform .4s;
+    transform-origin: left;
+    transform: scale(0);
+}
+
+.restauran_option h4:hover:after {
+    transform-origin: right;
+    transform: scale(1);
+}
+
+
+.popular {
+    width: 100%;
+    padding: 40px 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+
+.popular h2 {
+    color: #be2e30;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+.popular_food_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.popular .food_card {
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 250px;
+}
+
+.popular .food_card:hover {
+    transform: scale(1.03);
+    background: #fcfcfc;
+}
+
+.popular .card_info {
+    color: #333;
+
+}
+
+.more_button {
+    width: 60px;
+    animation: more .9s linear infinite;
+}
+
+.main_footer {
+    background-color: #0f1c2d;
+    color: white;
+    padding: 40px 20px;
+    width: 100%;
+    position: relative;
+}
+
+.footer_container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.footer_logo,
+.footer_links,
+.footer_social {
+    min-width: 150px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.footer_logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.footer_logo img {
+    width: 37px;
+}
+
+.footer_logo p {
+    font-size: 0.9em;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #888;
+}
+
+.footer_links h4,
+.footer_social h4 {
+    color: #be2e30;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.footer_links ul {
+    list-style: none;
+}
+
+.footer_links a {
+    text-decoration: none;
+    color: #ccc;
+    line-height: 2;
+    transition: color 0.2s;
+    position: relative;
+}
+
+.footer_links a::after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: .1px;
+    border-radius: 3px;
+    bottom: -1px;
+    left: 0px;
+    transition: transform .4s;
+    transform-origin: left;
+    transform: scale(0);
+}
+
+.footer_links a:hover::after {
+    transform-origin: right;
+    transform: scale(1);
+}
+
+.social_icons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social_icons i {
+    font-size: 30px;
+    color: white;
+
+}
+
+.social_icons i:hover {
+    color: #cababa;
+}
+
+.contact_info p {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+
+
+@media (max-width: 768px) {
+    .footer_container {
+
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer_logo a {
+        justify-content: center;
+    }
+
+
+    .social_icons {
+        justify-content: center;
+    }
+
+    .footer_logo,
+    .footer_links,
+    .footer_social {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 20px;
+    }
+
+    .footer_social {
+        border-bottom: none;
+    }
+
+    .restauran_option a {
+        display: none;
+    }
+
+    .restauran_option {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+
+}
+
+.footer_bottom {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    font-size: 1em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+@keyframes more {
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.hid {
+    display: none;
+}
+
+.hid.active {
+    display: flex;
+}
+
+@media (max-width:600px) {
+    .right {
+        display: none;
+    }
+
+    .left span {
+        display: none;
+    }
+
+    .left a {
+        position: static;
+        width: 50px;
+        height: 50px;
+        border-width: 1px;
+        justify-content: center;
+    }
+
+    .left img {
+        width: 25px !important;
+    }
+
+    .text_over_img>div:first-child {
+        font-size: 30px;
+    }
+
+    .text_over_img .order {
+        font-size: 20px;
+    }
+
+    .hum {
+        display: flex;
+    }
+
+    .right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        background-color: #be2e30;
+        top: 60px;
+        left: 0px;
+        gap: 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .text {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .log_in {
+        width: 60%;
+        text-align: center;
+        margin-bottom: 20px;
+        transform: scaleX(1);
+    }
+
+    .right.active {
+        display: flex;
+    }
+
+    .restaurant_container {
+        top: 100px;
+        display: flex;
+        justify-content: center;
+        z-index: 100;
+        opacity: 100%;
+        transition: transform .1s;
+    }
+}
